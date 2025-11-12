@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main>
+    <section id="application-form" class="section">
+      <div class="container">
+        <h2>💌 Your Profile: 6 Simple Steps</h2>
+        <div class="form-container">
+          <form id="multi-step-form" action="mailto:shootyourshot@ojubabes.com" method="post" enctype="text/plain">
+            <!-- Step 1 -->
+            <div id="step-1" class="form-step active">
+              <h3>Step 1: Personal Information</h3>
+              <input type="text" name="first-name" placeholder="First Name" required>
+              <input type="text" name="last-name" placeholder="Last Name" required>
+              <select name="gender" required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <input type="date" name="dob" required>
+              <label for="profile-photo">Profile Photo (JPEG/PNG)</label>
+              <input type="file" name="profile-photo" accept=".jpg, .jpeg, .png" required>
+              <input type="tel" name="phone" placeholder="WhatsApp Phone Number" required>
+              <input type="email" name="email" placeholder="Email Address" required>
+              <input type="text" name="location" placeholder="City & Country" required>
+              <input type="text" name="occupation" placeholder="Occupation" required>
+              <button type="button" class="button" onclick="nextStep()">Next</button>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step-2" class="form-step">
+              <h3>Step 2: Relationship Preferences</h3>
+              <select name="interested-in" required>
+                <option value="" disabled selected>Interested In</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <label>Relationship Type (select all that apply)</label>
+              <input type="checkbox" name="relationship-type" value="friendship"> Friendship<br>
+              <input type="checkbox" name="relationship-type" value="serious"> Serious Relationship<br>
+              <input type="checkbox" name="relationship-type" value="marriage"> Marriage<br>
+              <input type="checkbox" name="relationship-type" value="situationship"> Situationship 😅<br>
+              <label for="age-range">Preferred Age Range</label>
+              <input type="text" name="age-range" placeholder="e.g., 25-35">
+              <input type="text" name="preferred-location" placeholder="Preferred Location">
+              <select name="religion">
+                <option value="">Religion or Faith (Optional)</option>
+                <option value="christianity">Christianity</option>
+                <option value="islam">Islam</option>
+                <option value="hinduism">Hinduism</option>
+                <option value="buddhism">Buddhism</option>
+                <option value="judaism">Judaism</option>
+                <option value="other">Other</option>
+                <option value="none">None</option>
+              </select>
+              <button type="button" class="button" onclick="prevStep()">Previous</button>
+              <button type="button" class="button" onclick="nextStep()">Next</button>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step-3" class="form-step">
+              <h3>Step 3: Lifestyle & Background</h3>
+              <input type="text" name="education" placeholder="Education Level">
+              <input type="text" name="hobbies" placeholder="Hobbies / Interests (comma separated)">
+              <input type="text" name="languages" placeholder="Languages Spoken (comma separated)">
+              <input type="text" name="height" placeholder="Height (e.g., 5'10")">
+              <input type="text" name="body-type" placeholder="Body Type">
+              <select name="drinking">
+                <option value="" disabled selected>Drinking Habits</option>
+                <option value="never">Never</option>
+                <option value="socially">Socially</option>
+                <option value="frequently">Frequently</option>
+              </select>
+              <select name="smoking">
+                <option value="" disabled selected>Smoking Habits</option>
+                <option value="never">Never</option>
+                <option value="socially">Socially</option>
+                <option value="frequently">Frequently</option>
+              </select>
+              <input type="text" name="date-activity" placeholder="Favorite Date Activity">
+              <button type="button" class="button" onclick="prevStep()">Previous</button>
+              <button type="button" class="button" onclick="nextStep()">Next</button>
+            </div>
+
+            <!-- Step 4 -->
+            <div id="step-4" class="form-step">
+                <h3>Step 4: About You</h3>
+                <textarea name="bio" placeholder="Tell us about yourself." rows="4" required></textarea>
+                <select name="love-language">
+                    <option value="" disabled selected>Love Language</option>
+                    <option value="words">Words of Affirmation</option>
+                    <option value="acts">Acts of Service</option>
+                    <option value="gifts">Receiving Gifts</option>
+                    <option value="quality-time">Quality Time</option>
+                    <option value="touch">Physical Touch</option>
+                </select>
+                <textarea name="partner-qualities" placeholder="What qualities do you value most in a partner?" rows="4"></textarea>
+                <textarea name="deal-breakers" placeholder="Deal Breakers (Optional)" rows="3"></textarea>
+                <button type="button" class="button" onclick="prevStep()">Previous</button>
+                <button type="button" class="button" onclick="nextStep()">Next</button>
+            </div>
+
+            <!-- Step 5 -->
+            <div id="step-5" class="form-step">
+                <h3>Step 5: Media Uploads</h3>
+                <label for="photos">Upload up to 3 clear photos (JPEG/PNG)</label>
+                <input type="file" name="photos" accept=".jpg, .jpeg, .png" multiple>
+                <label for="video">Optional: 30-second video intro (MP4/MOV)</label>
+                <input type="file" name="video" accept=".mp4, .mov">
+                <p>Prompt: “Why should someone shoot their shot with you?”</p>
+                <button type="button" class="button" onclick="prevStep()">Previous</button>
+                <button type="button" class="button" onclick="nextStep()">Next</button>
+            </div>
+
+            <!-- Step 6 -->
+            <div id="step-6" class="form-step">
+                <h3>Step 6: Consent & Submission</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent-truth" name="consent-truth" required>
+                    <label for="consent-truth">I agree that the information provided is true.</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="consent-use" name="consent-use" required>
+                    <label for="consent-use">I consent to my information being used for matchmaking purposes on OJUBABES. (Read our <a href="#">Privacy Policy</a>)</label>
+                </div>
+                <button type="button" class="button" onclick="prevStep()">Previous</button>
+                <button type="submit" class="button">SUBMIT PROFILE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="section">
+    <div class="container footer-container">
+        <div class="footer-column">
+            <h3>OJUBABES Matchmaking</h3>
+            <p>Your journey to finding true love starts here. We are committed to helping you find your perfect match.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/faq">FAQ</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><img src="/instagram.jpeg" alt="Instagram"></a>
+              <a href="#" class="social-icon"><img src="/tiktok.png" alt="TikTok"></a>
+              <a href="#" class="social-icon"><img src="/facebook.png" alt="Facebook"></a>
+              <a href="#" class="social-icon"><img src="/x.png" alt="X"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container copyright">
+        <p>&copy; 2025 OJUBABES Matchmaking. All Rights Reserved.</p>
+    </div>
+</footer>
+  <script is:inline>
+    let currentStep = 1;
+    const formSteps = document.querySelectorAll('.form-step');
+    const totalSteps = formSteps.length;
+
+    function showStep(step) {
+        formSteps.forEach(el => el.classList.remove('active'));
+        const currentStepElement = document.getElementById(`step-${step}`);
+        if (currentStepElement) {
+            currentStepElement.classList.add('active');
+        }
+    }
+
+    function nextStep() {
+        const currentStepElement = document.getElementById(`step-${currentStep}`);
+        if (currentStepElement) {
+            const inputs = currentStepElement.querySelectorAll('input[required], select[required], textarea[required]');
+            let allValid = true;
+
+            for (const input of inputs) {
+                if (!input.checkValidity()) {
+                    // Modern browsers will show a validation message
+                    input.reportValidity();
+                    allValid = false;
+                    break;
+                }
+            }
+
+            if (allValid && currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 1) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    }
+
+    // Initial setup
+    showStep(currentStep);
+  </script>
+  
+  <style>
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 15px 0;
+    }
+    .checkbox-group input {
+        width: auto;
+    }
+  </style>
+</Layout>

@@ -1,11 +1,153 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <main>
+    <section id="hero" class="section">
+      <div class="overlay"></div>
+      <div class="container">
+        <h1>SHOOT YOUR SHOT with OJUBABES!</h1>
+        <p>Ready to find your perfect match? Fill out our detailed profile questionnaire to join the exclusive OJUBABES community.</p>
+        <a href="/register" class="button">START REGISTRATION</a>
+      </div>
+    </section>
+
+    <section id="welcome-video" class="section">
+      <div class="container">
+        <div class="video-container">
+          <iframe 
+            src="https://www.youtube.com/embed/55FHnJS3OWA?autoplay=1&mute=1&loop=1&playlist=55FHnJS3OWA"
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2>Don't Believe Us? See Who Found Love!</h2>
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <img src="https://images.unsplash.com/photo-1542103749-8ef59b94f475?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Couple 1">
+            <p>"We are so grateful to OJUBABES for bringing us together. We couldn't be happier!"</p>
+            <h4>- Funke & Tunde</h4>
+          </div>
+          <div class="testimonial">
+            <img src="https://images.unsplash.com/photo-1524250502761-5ac945e200f4?q=80&w=2564&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Couple 2">
+            <p>"The detailed profiles made all the difference. We knew we were a good match before we even met."</p>
+            <h4>- Aisha & Emeka</h4>
+          </div>
+          <div class="testimonial">
+            <img src="https://images.unsplash.com/photo-1567967455559-4e0e04bd1b1d?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Couple 3">
+            <p>"I was skeptical about online matchmaking, but OJUBABES proved me wrong. I found the love of my life!"</p>
+            <h4>- Chioma & David</h4>
+          </div>
+          <div class="testimonial">
+            <img src="https://images.unsplash.com/photo-1530092285049-1c42085fd395?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Couple 4">
+            <p>"The process was so easy and personalized. We felt understood from the very beginning."</p>
+            <h4>- Sade & Femi</h4>
+          </div>
+          <div class="testimonial">
+            <img src="https://images.unsplash.com/photo-1604928141068-a0d4f2b5d65b?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Couple 5">
+            <p>"A fantastic service for anyone serious about finding a partner. Highly recommended!"</p>
+            <h4>- Ife & Yemi</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section">
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h3>OJUBABES Matchmaking</h3>
+                <p>Your journey to finding true love starts here. We are committed to helping you find your perfect match.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/about">About Us</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                  <a href="#" class="social-icon"><img src="/instagram.jpeg" alt="Instagram"></a>
+                  <a href="#" class="social-icon"><img src="/tiktok.png" alt="TikTok"></a>
+                  <a href="#" class="social-icon"><img src="/facebook.png" alt="Facebook"></a>
+                  <a href="#" class="social-icon"><img src="/x.png" alt="X"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2025 OJUBABES Matchmaking. All Rights Reserved.</p>
+        </div>
+    </footer>
+  </main>
+  <style>
+    #hero {
+      position: relative;
+      background-image: url('/download.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    #hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icon img {
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+    }
+
+    .social-icon img:hover {
+      transform: scale(1.2);
+    }
+
+    #welcome-video .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    }
+
+    #welcome-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
 </Layout>

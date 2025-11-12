@@ -1,0 +1,163 @@
+---
+---
+<header>
+  <div class="container">
+    <div class="header-left">
+      <a href="/" class="logo-link">
+        <img src="/shoot your shot purple.png" alt="OJUBABES Matchmaking Logo" class="logo">
+      </a>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/faq">FAQ</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <a href="/register" class="button register-btn">Register</a>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.main-nav');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    nav.classList.toggle('active');
+  });
+</script>
+
+<style>
+  header {
+    padding: 10px 0;
+    background: rgba(255, 240, 245, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .logo {
+    max-width: 120px;
+    background-color: #FF4081;
+    padding: 10px;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 25px;
+  }
+
+  .main-nav a {
+    color: #FF4081;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1.1em;
+  }
+
+  .main-nav a:hover {
+    color: #d6336c;
+  }
+
+  .button.register-btn {
+    background-color: #FF4081;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  .button.register-btn:hover {
+    background-color: #d6336c;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FF4081;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .header-left {
+      flex: 1;
+    }
+    
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background: rgba(255, 240, 245, 0.95);
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
+      gap: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav.active {
+      display: flex;
+    }
+
+    .button.register-btn {
+      display: none;
+    }
+    
+    .hamburger {
+      display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+  }
+</style>
